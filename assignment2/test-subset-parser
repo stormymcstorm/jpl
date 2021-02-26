@@ -39,7 +39,7 @@ sub runit($$) {
 my $fails = 0;
 
 foreach my $f (@ok_files) {
-    my $got = runit("make run TEST=$f", $f);
+    my $got = runit("make -s run TEST=$f", $f);
     my $expect = 0;
     print "$f : expect = ".($expect).", got = ".($got);
     if ($got != $expect) {
